@@ -310,11 +310,12 @@ def convertmoodle(inputfile, outputfolder):
     dumpmediafiles(inputfile, outputfolder)
     createtemplatefiles(outputfolder)
     readMoodle(inputfile, outputfolder)
+    shutil.make_archive(outputfolder, 'zip', outputfolder)
 
 def main(argv):
     print("Moodle xml questionbank to TextVision converter")
     print("default inputfilename: moodleq.xml")
-    print("default outputfolder:  ExportQTI")
+    print("default outputfolder:  ExportQTI and zipfile: ExportQTI.zip")
     inputfile = 'moodleq.xml'
     outputfolder = 'ExportQTI'
     try:
